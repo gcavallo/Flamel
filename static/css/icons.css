@@ -1,0 +1,54 @@
+@font-face {
+	font-family: 'icons';
+	src: url('../fonts/icons.woff?79801659') format('woff'),
+	     url('../fonts/icons.ttf?79801659') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+font-family: 'glyph';
+src:  url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+	    url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+	    url('../fonts/glyphicons-halflings-regular.ttf') format('truetype');
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: "icons", "glyph";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+
+	/* Fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+
+	/* You can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+
+	/* Uncomment for 3D effect */
+	/*text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-stackoverflow:before { content: '\e032'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */
+.icon-facebook:before { content: '\e802'; } /* '' */
+.icon-rss:before { content: '\e800'; } /* '' */
+.icon-mail-alt:before { content: '\f0e0'; } /* '' */
+.icon-github:before { content: '\f113'; } /* '' */
+.icon-resume:before { content: '\e008'; }
+.icon-articles:before { content: '\270f'; }
