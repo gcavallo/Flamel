@@ -46,7 +46,6 @@ TWITTER_ADDRESS     URL   Twitter
 ------------------- ----- ----------------
 **Services**
 ------------------------------------------
-ANALYTICS_DOMAIN    TEXT  Google analytics
 ANALYTICS_ID        TEXT  Google analytics
 DISQUS_SITENAME     TEXT  Disqus shortname
 ID_ACCT             TEXT  IntenseDebate ID

@@ -45,7 +45,7 @@
 			{{ article.locale_modified }}
 		</li>
 	{% endif %}
-	{% if article.author and SHOW_ARTICLE_AUTHOR %}
+	{% if article.author and SHOW_AUTHOR %}
 		<li>
 			<span class="text-muted glyphicon glyphicon-user"></span>&nbsp;
 			<a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
