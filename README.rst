@@ -6,14 +6,14 @@ pelican-flamel
 
 A theme for the Pelican_ static site generator. Modified from @nairobilug's Alchemy_ theme.
 
-features
+Features
 --------
 
 - Responsive design from monitor to smartphones.
 - Blog-specific navigation bar.
 - Optional IntenseDebate, Disqus, and Google Analytics integration.
 
-install
+Install
 -------
 
 .. code-block:: sh
@@ -22,8 +22,8 @@ install
 
 Then set the pelican config variable `THEME` to the `flamel` path.
 
-config
-------
+Configure
+---------
 
 =================== ===== ================
 Variable            Type  Description
@@ -56,7 +56,7 @@ An RSS icon will also appear on the blog if `FEED_ATOM` or `FEED_RSS` is set.
 
 See http://docs.getpelican.com/en/latest/settings.html for more settings.
 
-modify
+Modify
 ------
 
 .. _less: https://github.com/less/less.js
