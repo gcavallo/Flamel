@@ -46,10 +46,10 @@ TWITTER_ADDRESS     URL   Twitter
 ------------------- ----- ----------------
 **Services**
 ------------------------------------------
-DISQUS_SITENAME     TEXT  Disqus shortname
-ID_ACCT             TEXT  IntenseDebate ID
 ANALYTICS_DOMAIN    TEXT  Google analytics
 ANALYTICS_ID        TEXT  Google analytics
+DISQUS_SITENAME     TEXT  Disqus shortname
+ID_ACCT             TEXT  IntenseDebate ID
 =================== ===== ================
 
 An RSS icon will also appear on the blog if `FEED_ATOM` or `FEED_RSS` is set.
