@@ -20,7 +20,7 @@ Install
 
 	git clone https://github.com/gcavallo/pelican-flamel.git flamel
 
-Then set the pelican config variable `THEME` to the `flamel` path.
+Then set the pelican config variable ``THEME`` to the ``flamel`` path.
 
 Configure
 ---------
@@ -52,7 +52,7 @@ DISQUS_SITENAME     TEXT  Disqus shortname
 ID_ACCT             TEXT  IntenseDebate ID
 =================== ===== ================
 
-An RSS icon will also appear on the blog if `FEED_ATOM` or `FEED_RSS` is set.
+An RSS icon will also appear on the blog if ``FEED_ATOM`` or ``FEED_RSS`` is set.
 
 See http://docs.getpelican.com/en/latest/settings.html for more settings.
 
@@ -62,7 +62,7 @@ Modify
 .. _less: https://github.com/less/less.js
 .. _clean-css: https://github.com/jakubpawlowicz/clean-css
 
-You need less_ and clean-css_ to compile changes in `style.less`.
+You need less_ and clean-css_ to compile changes in ``style.less``.
 
 .. code-block:: sh
 
