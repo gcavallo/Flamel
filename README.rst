@@ -25,30 +25,32 @@ Then set the pelican config variable `THEME` to the `flamel` path.
 config
 ------
 
-=================== =====
-Variable            Type
-=================== =====
-        Template
--------------------------
-LICENSE_NAME        TEXT
+=================== ===== ================
+Variable            Type  Description
+=================== ===== ================
+**Template**
+------------------------------------------
+LICENSE_NAME        TEXT  License (footer)
 LICENSE_URL         URL
-PROFILE_IMAGE       URL
-SHOW_AUTHOR         BOOL
-SITE_SUBTEXT        TEXT
-          Menu
--------------------------
-EMAIL_ADDRESS       EMAIL
-FB_ADDRESS          URL
-GITHUB_ADDRESS      URL
-SO_ADDRESS          URL
-TWITTER_ADDRESS     URL
-        Services
--------------------------
-DISQUS_SITENAME     TEXT
-ID_ACCT             TEXT
-ANALYTICS_DOMAIN    TEXT
-ANALYTICS_ID        TEXT
-=================== =====
+PROFILE_IMAGE       URL   Profile image
+SHOW_AUTHOR         BOOL  Show/hide author
+SITE_SUBTEXT        TEXT  Header subtitle
+------------------- ----- ----------------
+**Menu**
+------------------------------------------
+EMAIL_ADDRESS       EMAIL Email (mailto)
+FB_ADDRESS          URL   Facebook
+GITHUB_ADDRESS      URL   Github
+SO_ADDRESS          URL   Stack Overflow
+TWITTER_ADDRESS     URL   Twitter
+------------------- ----- ----------------
+**Services**
+------------------------------------------
+DISQUS_SITENAME     TEXT  Disqus shortname
+ID_ACCT             TEXT  IntenseDebate ID
+ANALYTICS_DOMAIN    TEXT  Google analytics
+ANALYTICS_ID        TEXT  Google analytics
+=================== ===== ================
 
 An RSS icon will also appear on the blog if `FEED_ATOM` or `FEED_RSS` is set.
 
