@@ -17,9 +17,9 @@
 {% block content %}
 {% include "include/nav.html" %}
 <div class="post full-post">
-	<h3 class="post-title">
+	<h1 class="post-title">
 		<a href="/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-	</h3>
+	</h1>
 	<ul class="list-inline">
 		<li class="text-muted glyphicon glyphicon-calendar"></li>
 		<li class="text-muted post-date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</li>
