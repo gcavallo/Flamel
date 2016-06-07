@@ -7,25 +7,38 @@
 @sans-serif: "Droid Sans", Helvetica, "Segoe UI", sans-serif;
 @monospace: "DejaVu Sans Mono", Consolas, Courier, monospace;
 
+@foreground: #000;
+@background: #4f5b66;
+@title: #2b303b;
+@subtitle: #b48ead;
+@separator: #ddd;
+@anchor: #8fa1b3;
+@hover: #ebcb8b;
+
+.heading-mixin(@size, @color) {
+	font-size: @size;
+	font-family: @serif;
+	font-weight: bold;
+	font-style: normal;
+	color: @color;
+}
+
+h1 { .heading-mixin(36px, @title); }
+h2 { .heading-mixin(30px, @title); }
+h3 { .heading-mixin(24px, @title); }
+h4 { .heading-mixin(18px, @subtitle); }
+h5 { .heading-mixin(16px, @subtitle); }
+h6 { .heading-mixin(12px, @foreground); }
+
 html {
-	background-color: #2f343e;
+	background-color: @background;
 	min-width: 600px;
 }
 
 body {
+	color: @foreground;
 	background-color: #fff;
 	font-family: @sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: @serif;
-	font-weight: bold;
-	font-style: normal;
 }
 
 code,
@@ -36,20 +49,18 @@ samp {
 }
 
 a {
-	color: #5294e2;
+	color: @anchor;
 	&:hover {
-		color: orange;
+		color: @hover;
 		text-decoration: none;
 	}
 }
 
-.container {
-	max-width: 760px;
-}
+.container { max-width: 760px; }
 
 .header {
-	background: url('/theme/img/bg.jpg') center no-repeat #efefef;
-	border-bottom: 10px solid #2f343e;
+	background: url('/theme/img/bg.jpg') center no-repeat @separator;
+	border-bottom: 10px solid @background;
 	margin-bottom: 30px;
 	padding: 30px 0 0 0;
 	.header-image {
@@ -57,14 +68,14 @@ a {
 		width: 100px;
 	}
 	.header-name {
-		color: #2f343e;
+		color: @title;
 		font-size: 36px;
 		font-weight: bold;
 		font-style: italic;
 		margin-top: 0;
 	}
 	.header-text {
-		color: #2f343e;
+		color: @title;
 		font-size: 22px;
 		margin-bottom: 38px;
 		margin-top: 0;
@@ -74,7 +85,7 @@ a {
 		font-size: 18px;
 		margin-bottom: 0;
 		li {
-			background-color: #2f343e;
+			background-color: @background;
 			padding: 5px 10px 0 10px;
 			margin-left: 10px;
 			a {
@@ -85,9 +96,9 @@ a {
 }
 
 .footer {
-	background-color: #2f343e;
+	background-color: @background;
 	color: #fff;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid @separator;
 	font-size: 12px;
 	margin-top: 30px;
 	padding: 30px 0;
@@ -96,11 +107,9 @@ a {
 .post {
 	font-size: 16px;
 	&.mini-post {
-		border-bottom: 1px solid #ddd;
+		border-bottom: 1px solid @separator;
 		padding: 30px 0;
-		&:last-child {
-			border-bottom: none;
-		}
+		&:last-child { border-bottom: none; }
 		.post-title {
 			font-size: 18px;
 			font-weight: bold;
@@ -113,20 +122,23 @@ a {
 			font-size: 18px;
 		}
 	}
+	&.full-post {
+		.post-title {
+			.heading-mixin(24px, @title);
+			a { color: @title; }
+		}
+		.post-content {
+			text-align: justify;
+			h2 { .heading-mixin(18px; @subtitle); }
+		}
+	}
 	.post-content {
 		font-family: @serif;
-		text-align: justify;
 		img {
 			display: block;
 			height: auto;
 			max-width: 100%;;
 			margin: 0 auto 10px auto;
-		}
-		a {
-			color: #428bca;
-			&:hover {
-				color: #2a6496;
-			}
 		}
 	}
 }
