@@ -12,13 +12,13 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li>
 				<a href="{{ SITEURL }}/archives.html">
-					<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;
+					<span class="fa fa-archive"></span>
 					Archives
 				</a>
 			</li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-					<span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+					<span class="fa fa-folder"></span>
 					Categories
 					<span class="caret"></span>
 				</a>
@@ -30,7 +30,7 @@
 			</li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-					<span class="glyphicon glyphicon-tags"></span>&nbsp;
+					<span class="fa fa-tags"></span>
 					Tags
 					<span class="caret"></span>
 				</a>
@@ -41,7 +41,12 @@
 				</ul>
 			</li>
 			{% if FEED_ATOM or FEED_RSS %}
-			<li><a class="icon-rss" href="/{% if FEED_ATOM %}{{ FEED_ATOM }}{% else %}{{ FEED_RSS }}{% endif %}">Feed</a></li>
+			<li>
+				<a href="/{% if FEED_ATOM %}{{ FEED_ATOM }}{% else %}{{ FEED_RSS }}{% endif %}">
+					<span class="fa fa-rss"></span>
+					Feed
+				</a>
+			</li>
 			{% endif %}
 		</ul>
 	</div>

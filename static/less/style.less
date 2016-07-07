@@ -1,4 +1,3 @@
-@import (less) "../css/icons.css";
 @import (less) "../css/pygments.css";
 
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext);
@@ -9,9 +8,11 @@
 
 @foreground: #000;
 @background: #2B303B;
+@body: #fafafa;
+@block: #fff;
 @title: #2b303b;
 @subtitle: #b48ead;
-@separator: #ddd;
+@border: #ddd;
 @anchor: #8fa1b3;
 @hover: #ebcb8b;
 
@@ -21,6 +22,12 @@
 	font-weight: bold;
 	font-style: normal;
 	color: @color;
+	a {
+		color: @color;
+		&:hover {
+			color: @color;
+		}
+	}
 }
 
 h1 { .heading-mixin(36px, @title); }
@@ -37,7 +44,7 @@ html {
 
 body {
 	color: @foreground;
-	background-color: #fff;
+	background-color: @body;
 	font-family: @sans-serif;
 }
 
@@ -56,38 +63,39 @@ a {
 	}
 }
 
-.container { max-width: 760px; }
+.container { 
+	max-width: 780px;
+	.navbar-default {
+		background-color: @block;
+		border: 1px solid @border;
+		border-radius: 4px;
+	}
+}
 
 .header {
-	background: url('/theme/img/bg.jpg') center no-repeat @separator;
-	border-bottom: 10px solid @background;
-	margin-bottom: 30px;
-	padding: 30px 0 0 0;
-	.header-image {
+	background-color: #efefef;
+	padding: 25px 0 15px 0;
+	border-bottom: 1px solid @border;
+	margin-bottom: 15px;
+	&-image {
 		margin-right: 30px;
 		width: 100px;
 	}
-	.header-name {
-		color: @title;
-		font-size: 36px;
-		font-weight: bold;
+	&-name {
 		font-style: italic;
 		margin-top: 0;
+		float: left;
 	}
-	.header-text {
-		color: @title;
-		font-size: 22px;
-		margin-bottom: 38px;
-		margin-top: 0;
-	}
-	.header-menu {
-		text-align: right;
+	&-menu {
 		font-size: 18px;
-		margin-bottom: 0;
+		float: right;
 		li {
 			background-color: @background;
-			padding: 5px 10px 0 10px;
+			padding: 5px 10px;
 			margin-left: 10px;
+			&:hover {
+				background-color: #8fa1b3
+			}
 			a {
 				color: #fff;
 			}
@@ -95,57 +103,67 @@ a {
 	}
 }
 
+.page-title {
+	text-align: center;
+}
+
 .footer {
 	background-color: @background;
 	color: #fff;
-	border-top: 1px solid @separator;
+	border-top: 1px solid @border;
 	font-size: 12px;
 	margin-top: 30px;
 	padding: 30px 0;
 }
 
+.post-image {
+	border-radius: 4px 4px 0 0;
+	overflow: hidden;
+	img {
+		display: block;
+		height: auto;
+		max-width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+}
+
 .post {
 	font-size: 16px;
-	&.mini-post {
-		border-bottom: 1px solid @separator;
-		padding: 30px 0;
-		&:last-child { border-bottom: none; }
-		.post-title {
-			font-size: 18px;
-			font-weight: bold;
-			line-height: 1.42857143; // Bootstrap rule
-			margin-bottom: 10px;
-			margin-top: 0;
-		}
-		.post-date {
-			font-family: @sans-serif;
-			font-size: 18px;
-		}
+	background-color: @block;
+	border: 1px solid @border;
+	border-radius: 0 0 4px 4px;
+	padding: 15px;
+	margin: 0 0 30px 0;
+	&-title {
+		margin-top: 0;
 	}
-	&.full-post {
-		.post-title {
-			.heading-mixin(24px, @title);
-			a { color: @title; }
-		}
-		.post-content {
-			text-align: justify;
-			h2 { .heading-mixin(18px; @subtitle); }
-		}
+	&-metadata {
+		font-size: 14px;
 	}
-	.post-content {
+	&-date, &-category, &-tags, &-modified, &-author {
+		margin-right: 15px;
+	}
+	&-content {
+		margin: 15px 0 15px 0;
 		font-family: @serif;
-		img {
-			display: block;
-			height: auto;
-			max-width: 100%;;
-			margin: 0 auto 10px auto;
-		}
+	}
+	img {
+		display: block;
+		height: auto;
+		max-width: 100%;
+		margin: 0 auto 10px auto;
+		text-align: center;
 	}
 }
 
 .separator {
 	margin-bottom: 30px;
 	margin-top: 30px;
+}
+
+.pagination {
+	margin: 0;
 }
 
 // intensedebate

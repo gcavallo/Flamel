@@ -16,43 +16,17 @@
 {% endblock %}
 {% block content %}
 {% include "include/nav.html" %}
+<h3 class="page-title">
+	<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
+</h3>
+{% include "include/preview.html" %}
 <div class="post full-post">
-	<h1 class="post-title">
-		<a href="/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-	</h1>
-	<ul class="list-inline">
-		<li class="text-muted glyphicon glyphicon-calendar"></li>
-		<li class="text-muted post-date" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</li>
-		<li class="text-muted glyphicon glyphicon-folder-open"></li>
-		<li class="post-category">
-			<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-		</li>
-		{% if article.tags %}
-		<li class="text-muted glyphicon glyphicon-tags"></li>
-		{% for tag in article.tags %}
-			<a href="{{ SITEUrL }}/tag/{{ tag }}.html">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-		{% endfor %}
-		</li>
-		{% endif %}
-	</ul>
+	{% include "include/metadata-top.html" %}
 	<div class="post-content">
 		{{ article.content }}
 	</div>
-	<ul class="list-inline">
-	{% if article.modified %}
-		<li class="text-muted post-modified" title="{{ article.modified.isoformat() }}">
-			<span class="glyphicon glyphicon-pencil"></span>&nbsp;
-			{{ article.locale_modified }}
-		</li>
-	{% endif %}
-	{% if article.author and SHOW_AUTHOR %}
-		<li>
-			<span class="text-muted glyphicon glyphicon-user"></span>&nbsp;
-			<a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-		</li>
-	{% endif %}
-	</ul>
-	{% include 'include/disqus.html' %}
-	{% include 'include/intensedebate.html' %}
+	{% include "include/metadata-bottom.html" %}
 </div>
+{% include "include/disqus.html" %}
+{% include "include/intensedebate.html" %}
 {% endblock %}

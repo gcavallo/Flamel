@@ -7,38 +7,20 @@
 {% endblock %}
 
 {% block content %}
-	{% include "include/nav.html" %}
-	{% block page_title %}
-		<h3>Articles</h3>
-	{% endblock %}
-	<div>
-	{% for article in articles_page.object_list %}
-		<div class="post mini-post">
-			<div class="row">
-				<div class="col-sm-4 hidden-xs">
-					<p class="post-date text-muted">
-						{{ article.locale_date }}
-					</p>
-					{% if article.category %}
-					<p class="post-category">
-						<span class="text-muted glyphicon glyphicon-folder-open"></span>&nbsp;
-						<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-					</p>
-					{% endif %}
-				</div>
-				<div class="col-sm-8">
-					<h3 class="post-title">
-						<a href="/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-					</h3>
-					<div class="post-content">
-						{{ article.summary }}
-					</div>
-				</div>
-			</div>
-		</div>
-	{% endfor %}
+{% include "include/nav.html" %}
+<h3 class="page-title">Articles</h3>
+{% for article in articles_page.object_list %}
+{% include "include/preview.html" %}
+<div class="post mini-post">
+	<h3 class="post-title">
+		<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
+	</h3>
+	{% include "include/metadata-top.html" %}
+	<div class="post-content">
+		{{ article.summary }}
 	</div>
-	{% include 'include/pagination.html' %}
-	</div>
+	{% include "include/metadata-bottom.html" %}
 </div>
+{% endfor %}
+{% include "include/pagination.html" %}
 {% endblock %}

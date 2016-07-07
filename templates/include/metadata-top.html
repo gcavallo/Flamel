@@ -1,0 +1,16 @@
+<div class="post-metadata text-muted">
+	<span class="fa fa-calendar"></span>
+	<time class="post-date" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+	{% if article.category %}
+	<span class="fa fa-folder"></span>
+	<a class="post-category" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+	{% endif %}
+	{% if article.tags %}
+	<span class="fa fa-tags"></span>
+	<span class="post-tags">
+	{% for tag in article.tags %}
+		<a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+	{% endfor %}
+	</span>
+	{% endif %}
+</div>

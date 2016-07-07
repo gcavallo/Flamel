@@ -1,0 +1,10 @@
+<div class="post-metadata text-muted">
+	{% if article.modified %}
+		<span class="fa fa-pencil"></span>
+		<time class="post-modified" datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>
+	{% endif %}
+	{% if article.author and SHOW_AUTHOR %}
+		<span class="fa fa-user"></span>
+		<a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+	{% endif %}
+</div>
