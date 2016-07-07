@@ -16,9 +16,9 @@
 {% endblock %}
 {% block content %}
 {% include "include/nav.html" %}
-<h3 class="page-title">
+<h2 class="page-title">
 	<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
-</h3>
+</h2>
 {% include "include/preview.html" %}
 <div class="post full-post">
 	{% include "include/metadata-top.html" %}
