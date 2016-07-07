@@ -1,53 +1,71 @@
 <header class="header">
 <div class="container">
 	{% if PROFILE_IMAGE %}
-		<div class="header-image pull-left">
-			<a class="nodec" href="{{ SITEURL }}"><img src={{ PROFILE_IMAGE }} width="100px"></a>
-		</div>
+	<div class="header-image pull-left">
+		<a class="nodec" href="{{ SITEURL }}"><img src={{ PROFILE_IMAGE }} width="100px"></a>
+	</div>
 	{% endif %}
 	<div class="header-inner">
 		<h1 class="header-name">
 			{{ SITENAME }}
 		</h1>
 		{% if SITE_SUBTEXT %}
-			<h2 class="header-text">{{ SITE_SUBTEXT }}</h2>
+		<h2 class="header-text">{{ SITE_SUBTEXT }}</h2>
 		{% endif %}
 		<nav>
 			<ul class="header-menu list-inline">
-				{% for title, link in MENU_ITEMS %}
-					<li><a href="{{ link }}">{{ title }}</a></li>
-				{% endfor %}
-					<li><a href="{{ SITEURL }}/">Blog</a></li>
+				<li><a href="{{ SITEURL }}/">Blog</a></li>
 				{% for p in PAGES %}
-					<li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+				<li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
 				{% endfor %}
+				{% if FB_ADDRESS %}
+				<li>
+					<a href="{{ FB_ADDRESS }}">
+						<span class="fa fa-facebook fa-fw"></span>
+					</a>
+				</li>
+				{% endif %}
 				{% if GITHUB_ADDRESS %}
-					<li>
-						<a href="{{ GITHUB_ADDRESS }}">
-							<span class="fa fa-github"></span>
-						</a>
-					</li>
+				<li>
+					<a href="{{ GITHUB_ADDRESS }}">
+						<span class="fa fa-github fa-fw"></span>
+					</a>
+				</li>
+				{% endif %}
+				{% if GOOGLE_ADDRESS %}
+				<li>
+					<a href="{{ GOOGLE_ADDRESS }}">
+						<span class="fa fa-google-plus fa-fw"></span>
+					</a>
+				</li>
+				{% endif %}
+				{% if IN_ADDRESS %}
+				<li>
+					<a href="{{ IN_ADDRESS }}">
+						<span class="fa fa-linkedin fa-fw"></span>
+					</a>
+				</li>
 				{% endif %}
 				{% if SO_ADDRESS %}
-					<li>
-						<a href="{{ SO_ADDRESS }}">
-							<span class="fa fa-stack-overflow"></span>
-						</a>
-					</li>
+				<li>
+					<a href="{{ SO_ADDRESS }}">
+						<span class="fa fa-stack-overflow fa-fw"></span>
+					</a>
+				</li>
 				{% endif %}
 				{% if TWITTER_ADDRESS %}
-					<li>
-						<a href="{{ TWITTER_ADDRESS }}">
-							<span class="fa fa-twitter"></span>
-						</a>
-					</li>
+				<li>
+					<a href="{{ TWITTER_ADDRESS }}">
+						<span class="fa fa-twitter fa-fw"></span>
+					</a>
+				</li>
 				{% endif %}
-				{% if FB_ADDRESS %}
-					<li>
-						<a href="{{ FB_ADDRESS }}">
-							<span class="fa fa-facebook"></span>
-						</a>
-					</li>
+				{% if YOUTUBE_ADDRESS %}
+				<li>
+					<a href="{{ YOUTUBE_ADDRESS }}">
+						<span class="fa fa-youtube fa-fw"></span>
+					</a>
+				</li>
 				{% endif %}
 			</ul>
 		</nav>

@@ -3,14 +3,16 @@ pelican-flamel
 
 .. _Pelican: https://github.com/getpelican/pelican
 .. _Alchemy: https://github.com/nairobilug/pelican-alchemy
+.. _Icarus:  https://github.com/ppoffice/hexo-theme-icarus
 
-A theme for the Pelican_ static site generator. Modified from @nairobilug's Alchemy_ theme.
+A theme for the Pelican_ static site generator. Inspired by nairobilug's Alchemy_ and ppoffice's Icarus_ themes.
 
 Features
 --------
 
 - Responsive design from monitor to smartphones.
 - Blog-specific navigation bar.
+- Image previews for articles.
 - Optional IntenseDebate, Disqus, and Google Analytics integration.
 
 Install
@@ -41,8 +43,11 @@ SITE_SUBTEXT        TEXT  Header subtitle
 EMAIL_ADDRESS       EMAIL Email (mailto)
 FB_ADDRESS          URL   Facebook
 GITHUB_ADDRESS      URL   Github
+GOOGLE_ADDRESS      URL   Google+
+IN_ADDRESS          URL   LinkedIn
 SO_ADDRESS          URL   Stack Overflow
 TWITTER_ADDRESS     URL   Twitter
+YOUTUBE_ADDRESS     URL   YouTube
 ------------------- ----- ----------------
 **Services**
 ------------------------------------------
