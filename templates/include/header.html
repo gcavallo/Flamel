@@ -1,17 +1,9 @@
 <header class="header">
 <div class="container">
-	{% if PROFILE_IMAGE %}
-	<div class="header-image pull-left">
-		<a class="nodec" href="{{ SITEURL }}"><img src={{ PROFILE_IMAGE }} width="100px"></a>
-	</div>
-	{% endif %}
 	<div class="header-inner">
 		<h1 class="header-name">
 			{{ SITENAME }}
 		</h1>
-		{% if SITE_SUBTEXT %}
-		<h2 class="header-text">{{ SITE_SUBTEXT }}</h2>
-		{% endif %}
 		<nav>
 			<ul class="header-menu list-inline">
 				<li><a href="{{ SITEURL }}/">Blog</a></li>

@@ -34,13 +34,10 @@ Variable            Type  Description
 ------------------------------------------
 LICENSE_NAME        TEXT  License (footer)
 LICENSE_URL         URL
-PROFILE_IMAGE       URL   Profile image
 SHOW_AUTHOR         BOOL  Show/hide author
-SITE_SUBTEXT        TEXT  Header subtitle
 ------------------- ----- ----------------
 **Menu**
 ------------------------------------------
-EMAIL_ADDRESS       EMAIL Email (mailto)
 FB_ADDRESS          URL   Facebook
 GITHUB_ADDRESS      URL   Github
 GOOGLE_ADDRESS      URL   Google+
