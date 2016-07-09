@@ -8,21 +8,30 @@
 
 {% block content %}
 {% include "include/nav.html" %}
-{% block page_title %}
-<h2 class="page-title">Articles</h2>
-{% endblock %}
-{% for article in articles_page.object_list %}
-{% include "include/preview.html" %}
-<div class="post mini-post">
-	<h3 class="post-title">
-		<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
-	</h3>
-	{% include "include/metadata-top.html" %}
-	<div class="post-content">
-		{{ article.summary }}
-	</div>
-	{% include "include/metadata-bottom.html" %}
-</div>
-{% endfor %}
+<div class="row">
+	<div class="col-md-12 col-lg-10">
+		<div class="row">
+			{% block page_title %}
+			<h2 class="page-title">Articles</h2>
+			{% endblock %}
+			{% for article in articles_page.object_list %}
+			<div class="col-sm-12 col-md-6">
+				{% include "include/preview.html" %}
+				<div class="post mini-post">
+					<h3 class="post-title">
+						<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
+					</h3>
+					{% include "include/metadata-top.html" %}
+					<div class="post-content">
+						{{ article.summary }}
+					</div>
+					{% include "include/metadata-bottom.html" %}
+				</div>
+			</div><!-- column (child) -->
+			{% endfor %}
+		</div><!-- row (child) -->
+	</div><!-- column (parent) -->
+	{% include "include/sidebar.html" %}
+</div><!-- row (parent) -->
 {% include "include/pagination.html" %}
 {% endblock %}

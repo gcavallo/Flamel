@@ -1,6 +1,6 @@
 @import (less) "../css/pygments.css";
 
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin);
 
 @serif: "PT Serif", "Droid Serif", Times, "Times New Roman", serif;
 @sans-serif: "Droid Sans", Helvetica, "Segoe UI", sans-serif;
@@ -21,6 +21,7 @@
 	font-family: @serif;
 	font-weight: bold;
 	font-style: normal;
+	margin-top: 0;
 	color: @color;
 	a {
 		color: @color;
@@ -39,7 +40,7 @@ h6 { .heading-mixin(12px, @foreground); }
 
 html {
 	background-color: @background;
-	min-width: 600px;
+	min-width: 480px;
 }
 
 body {
@@ -64,11 +65,13 @@ a {
 }
 
 .container { 
-	max-width: 780px;
 	.navbar-default {
 		background-color: @block;
 		border: 1px solid @border;
 		border-radius: 4px;
+	}
+	&-post {
+		max-width: 970px;
 	}
 }
 
@@ -107,6 +110,19 @@ a {
 
 .page-title {
 	text-align: center;
+	margin-bottom: 20px;
+	padding: 0 15px;
+}
+
+.sidebar {
+	margin: 50px 0 15px 0;
+	h4 {
+		display: inline-block;
+	}
+	.badge {
+		color: #bbb;
+		background-color: #fff;
+	}
 }
 
 .footer {
@@ -166,6 +182,11 @@ a {
 
 .pagination {
 	margin: 0;
+}
+
+// disqus
+#disqus_thread {
+	padding: 0 15px;
 }
 
 // intensedebate

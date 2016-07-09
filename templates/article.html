@@ -14,19 +14,25 @@
 {% block title %}
 	{{ SITENAME }} &mdash; {{ article.title|striptags }}
 {% endblock %}
+
 {% block content %}
 {% include "include/nav.html" %}
-<h2 class="page-title">
-	<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
-</h2>
-{% include "include/preview.html" %}
-<div class="post full-post">
-	{% include "include/metadata-top.html" %}
-	<div class="post-content">
-		{{ article.content }}
-	</div>
-	{% include "include/metadata-bottom.html" %}
-</div>
-{% include "include/disqus.html" %}
-{% include "include/intensedebate.html" %}
+<div class="row">
+	<div class="col-md-12 col-lg-10">
+		<h2 class="page-title">
+			<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
+		</h2>
+		{% include "include/preview.html" %}
+		<div class="post post-full">
+			{% include "include/metadata-top.html" %}
+			<div class="post-content">
+				{{ article.content }}
+			</div>
+			{% include "include/metadata-bottom.html" %}
+		</div>
+		{% include "include/disqus.html" %}
+		{% include "include/intensedebate.html" %}
+	</div><!-- column -->
+	{% include "include/sidebar.html" %}
+</div><!-- row -->
 {% endblock %}
