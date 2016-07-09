@@ -23,13 +23,15 @@
 			<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
 		</h2>
 		{% include "include/preview.html" %}
-		<div class="post post-full">
-			{% include "include/metadata-top.html" %}
-			<div class="post-content">
-				{{ article.content }}
-			</div>
-			{% include "include/metadata-bottom.html" %}
-		</div>
+		<article class="post post-full">
+			<header>
+				{% include "include/metadata-top.html" %}
+			</header>
+			<div class="post-content">{{ article.content }}</div>
+			<footer>
+				{% include "include/metadata-bottom.html" %}
+			</footer>
+		</article>
 		{% include "include/disqus.html" %}
 		{% include "include/intensedebate.html" %}
 	</div><!-- column -->

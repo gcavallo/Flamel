@@ -17,16 +17,18 @@
 			{% for article in articles_page.object_list %}
 			<div class="col-sm-12 col-md-6">
 				{% include "include/preview.html" %}
-				<div class="post mini-post">
-					<h3 class="post-title">
-						<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
-					</h3>
-					{% include "include/metadata-top.html" %}
-					<div class="post-content">
-						{{ article.summary }}
-					</div>
-					{% include "include/metadata-bottom.html" %}
-				</div>
+				<article class="post mini-post">
+					<header>
+						<h3 class="post-title">
+							<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
+						</h3>
+						{% include "include/metadata-top.html" %}
+					</header>
+					<div class="post-content">{{ article.summary }}</div>
+					<footer>
+						{% include "include/metadata-bottom.html" %}
+					</footer>
+				</article>
 			</div><!-- column (child) -->
 			{% endfor %}
 		</div><!-- row (child) -->

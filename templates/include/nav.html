@@ -1,57 +1,53 @@
-<div class="row">
-	<div class="col-md-12 hidden-lg">
-		<nav class="navbar navbar-default">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="{{ SITEURL }}/">Blog</a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a href="{{ SITEURL }}/archives.html">
-							<span class="fa fa-archive"></span>
-							Archives
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-							<span class="fa fa-folder"></span>
-							Categories
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							{% for category, articles in categories %}
-							<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-							{% endfor %}
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-							<span class="fa fa-tags"></span>
-							Tags
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							{% for tag, articles in tags|sort %}
-							<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a></li>
-							{% endfor %}
-						</ul>
-					</li>
-					{% if FEED_ATOM or FEED_RSS %}
-					<li>
-						<a href="/{% if FEED_ATOM %}{{ FEED_ATOM }}{% else %}{{ FEED_RSS }}{% endif %}">
-							<span class="fa fa-rss"></span>
-							Feed
-						</a>
-					</li>
-					{% endif %}
+<aside class="navbar navbar-default hidden-lg">
+	<header class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="{{ SITEURL }}/">Blog</a>
+	</header>
+	<div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a href="{{ SITEURL }}/archives.html">
+					<span class="fa fa-archive"></span>
+					Archives
+				</a>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+					<span class="fa fa-folder"></span>
+					Categories
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					{% for category, articles in categories %}
+					<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+					{% endfor %}
 				</ul>
-			</div>
-		</nav>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+					<span class="fa fa-tags"></span>
+					Tags
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					{% for tag, articles in tags|sort %}
+					<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+			{% if FEED_ATOM or FEED_RSS %}
+			<li>
+				<a href="/{% if FEED_ATOM %}{{ FEED_ATOM }}{% else %}{{ FEED_RSS }}{% endif %}">
+					<span class="fa fa-rss"></span>
+					Feed
+				</a>
+			</li>
+			{% endif %}
+		</ul>
 	</div>
-</div>
+</aside>

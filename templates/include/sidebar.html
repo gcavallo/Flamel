@@ -1,46 +1,44 @@
-<div class="col-lg-2 visible-lg">
-	<nav class="sidebar text-muted">
-		<span class="fa fa-folder fa-fw"></span>
-		<h4>Categories</h4>
-		<ul class="list-group">
-			{% for category, articles in categories %}
-			<li class="list-group-item">
-				<a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
-			</li>
-			{% endfor %}
-		</ul>
-		<span class="fa fa-tags fa-fw"></span>
-		<h4>Tags</h4>
-		<ul class="list-group">
-			{% for tag, articles in tags|sort %}
-			<li class="list-group-item">
-				<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-				<span class="badge">{{ articles|count }}</span>
-			</li>
-			{% endfor %}
-		</ul>
-		<span class="fa fa-archive fa-fw"></span>
-		<h4>Archives</h4>
-		<ul class="list-group">
-			<li class="list-group-item">
-				<a href="{{ SITEURL }}/archives.html">All articles</a>
-			</li>
-		</ul>
-		<span class="fa fa-rss fa-fw"></span>
-		<h4>Feeds</h4>
-		{% if FEED_ATOM or FEED_RSS %}
-		<ul class="list-group">
-			{% if FEED_ATOM %}
-			<li class="list-group-item">
-				<a href="/{{ FEED_ATOM }}">Atom 1.0</a>
-			</li>
-			{% endif %}
-			{% if FEED_RSS %}
-			<li class="list-group-item">
-				<a href="/{{ FEED_RSS }}">RSS 2.0</a>
-			</li>
-			{% endif %}
-		</ul>
+<aside class="sidebar text-muted col-lg-2 visible-lg">
+	<span class="fa fa-folder fa-fw"></span>
+	<h4>Categories</h4>
+	<ul class="list-group">
+		{% for category, articles in categories %}
+		<li class="list-group-item">
+			<a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<span class="fa fa-tags fa-fw"></span>
+	<h4>Tags</h4>
+	<ul class="list-group">
+		{% for tag, articles in tags|sort %}
+		<li class="list-group-item">
+			<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+			<span class="badge">{{ articles|count }}</span>
+		</li>
+		{% endfor %}
+	</ul>
+	<span class="fa fa-archive fa-fw"></span>
+	<h4>Archives</h4>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<a href="{{ SITEURL }}/archives.html">All articles</a>
+		</li>
+	</ul>
+	<span class="fa fa-rss fa-fw"></span>
+	<h4>Feeds</h4>
+	{% if FEED_ATOM or FEED_RSS %}
+	<ul class="list-group">
+		{% if FEED_ATOM %}
+		<li class="list-group-item">
+			<a href="/{{ FEED_ATOM }}">Atom 1.0</a>
+		</li>
 		{% endif %}
-	</nav>
-</div>
+		{% if FEED_RSS %}
+		<li class="list-group-item">
+			<a href="/{{ FEED_RSS }}">RSS 2.0</a>
+		</li>
+		{% endif %}
+	</ul>
+	{% endif %}
+</aside>
