@@ -14,10 +14,13 @@
 			{% block page_title %}
 			<h2 class="page-title">Articles</h2>
 			{% endblock %}
-			{% for article in articles_page.object_list %}
+		</div>
+		{% for articles_pair in articles_page.object_list|batch(2) %}
+		<div class="row">
+			{% for article in articles_pair %}
 			<div class="col-sm-12 col-md-6">
 				{% include "include/preview.html" %}
-				<article class="post mini-post">
+				<article class="post post-mini">
 					<header>
 						<h3 class="post-title">
 							<a href="/{{ article.url }}" title="{{ article.title|striptags }}">{{ article.title }}</a>
@@ -32,8 +35,9 @@
 			</div><!-- column (child) -->
 			{% endfor %}
 		</div><!-- row (child) -->
+		{% endfor %}
+		{% include "include/pagination.html" %}
 	</div><!-- column (parent) -->
 	{% include "include/sidebar.html" %}
 </div><!-- row (parent) -->
-{% include "include/pagination.html" %}
 {% endblock %}
