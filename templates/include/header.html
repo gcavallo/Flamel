@@ -1,63 +1,61 @@
 <header class="header">
-	<div class="container">
-		<h1 class="header-name">
-			{{ SITENAME }}
-		</h1>
+	<div class="container clearfix">
+		<h1 class="header-name">{{ SITENAME }}</h1>
 		<nav>
 			<ul class="header-menu list-inline">
-				<li><a href="{{ SITEURL }}/">Blog</a></li>
-				{% for p in PAGES %}
-				<li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-				{% endfor %}
-				{% if FB_ADDRESS %}
-				<li>
+				<li class="list-inline-item"><a href="{{ SITEURL }}/">Blog</a></li>
+{% for p in PAGES %}
+				<li class="list-inline-item"><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+{% endfor %}
+{% if FB_ADDRESS %}
+				<li class="list-inline-item">
 					<a href="{{ FB_ADDRESS }}">
 						<span class="fa fa-facebook fa-fw"></span>
 					</a>
 				</li>
-				{% endif %}
-				{% if GITHUB_ADDRESS %}
-				<li>
+{% endif %}
+{% if GITHUB_ADDRESS %}
+				<li class="list-inline-item">
 					<a href="{{ GITHUB_ADDRESS }}">
 						<span class="fa fa-github fa-fw"></span>
 					</a>
 				</li>
-				{% endif %}
-				{% if GOOGLE_ADDRESS %}
-				<li>
+{% endif %}
+{% if GOOGLE_ADDRESS %}
+				<li class="list-inline-item">
 					<a href="{{ GOOGLE_ADDRESS }}">
 						<span class="fa fa-google-plus fa-fw"></span>
 					</a>
 				</li>
-				{% endif %}
-				{% if IN_ADDRESS %}
-				<li>
+{% endif %}
+{% if IN_ADDRESS %}
+				<li class="list-inline-item">
 					<a href="{{ IN_ADDRESS }}">
 						<span class="fa fa-linkedin fa-fw"></span>
 					</a>
 				</li>
-				{% endif %}
-				{% if SO_ADDRESS %}
-				<li>
+{% endif %}
+{% if SO_ADDRESS %}
+				<li class="list-inline-item">
 					<a href="{{ SO_ADDRESS }}">
 						<span class="fa fa-stack-overflow fa-fw"></span>
 					</a>
 				</li>
-				{% endif %}
-				{% if TWITTER_ADDRESS %}
-				<li>
+{% endif %}
+{% if TWITTER_ADDRESS %}
+				<li class="list-inline-item">
 					<a href="{{ TWITTER_ADDRESS }}">
 						<span class="fa fa-twitter fa-fw"></span>
 					</a>
 				</li>
-				{% endif %}
-				{% if YOUTUBE_ADDRESS %}
-				<li>
+{% endif %}
+{% if YOUTUBE_ADDRESS %}
+				<li class="list-inline-item">
 					<a href="{{ YOUTUBE_ADDRESS }}">
 						<span class="fa fa-youtube fa-fw"></span>
 					</a>
 				</li>
-				{% endif %}
+{% endif %}
 			</ul>
 		</nav>
 	</div><!-- container -->
