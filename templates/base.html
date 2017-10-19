@@ -12,36 +12,30 @@
 
 	<link rel="icon" type="image/png" href="/favicon.png" />
 
-	{% if FEED_ATOM %}
-		<link type="application/atom+xml" rel="alternate" href="/{{ FEED_ATOM }}"  title="{{ SITENAME }} Atom Feed">
-	{% endif %}
-	{% if FEED_RSS %}
-		<link type="application/rss+xml" rel="alternate" href="/{{ FEED_RSS }}" title="{{ SITENAME }} RSS Feed">
-	{% endif %}
+{% if FEED_ATOM %}
+	<link type="application/atom+xml" rel="alternate" href="/{{ FEED_ATOM }}"  title="{{ SITENAME }} Atom Feed">
+{% endif %}
+{% if FEED_RSS %}
+	<link type="application/rss+xml" rel="alternate" href="/{{ FEED_RSS }}" title="{{ SITENAME }} RSS Feed">
+{% endif %}
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0=" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.min.css">
 
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		{# WARNING: Respond.js doesn't work if you view the page via file:// #}
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
-	{% include "include/analytics.html" %}
+{% include "include/analytics.html" %}
 {% endblock %}
 </head>
 
 <body>
-	{% include "include/header.html" %}
+{% include "include/header.html" %}
 	<div class="container">
-		{% block content %}{% endblock %}
+{% block content %}{% endblock %}
 	</div>
-	{% include "include/footer.html" %}
+{% include "include/footer.html" %}
 
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs=" crossorigin="anonymous"></script>
 </body>
 
 </html>
