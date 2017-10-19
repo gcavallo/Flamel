@@ -20,6 +20,7 @@
 @magenta: #b48ead;
 @cyan: #8fa1b3;
 @white: #fff;
+@gray: #bbb;
 @black: #000;
 
 .heading-mixin(@size, @color) {
@@ -124,7 +125,7 @@ a {
 		display: inline-block;
 	}
 	.badge {
-		color: #bbb;
+		color: @gray;
 		background-color: #fff;
 	}
 }
@@ -200,6 +201,16 @@ a {
 
 .pagination {
 	margin: 0;
+	a.page-link {
+		color: @cyan;
+	}
+	.page-item.active .page-link {
+		background-color: @cyan;
+		border-color: @cyan;
+	}
+	.page-item.disabled .page-link {
+		color: @border;
+	}
 }
 
 // disqus

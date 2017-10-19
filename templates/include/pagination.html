@@ -1,15 +1,40 @@
 {% if DEFAULT_PAGINATION %}
-<div class="row">
-	<div class="text-center">
-		<ul class="pagination">
-			{% if articles_page.has_previous() %}
-				<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo;</a></li>
-			{% endif %}
-			<li class="disabled"><a href="#">Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}</a></li>
-			{% if articles_page.has_next() %}
-				<li><a href="{{ SITEURL }}/{{ articles_next_page.url }}">&raquo;</a></li>
-			{% endif %}
-		</ul>
-	</div>
-</div>
+<nav aria-label="Blog page navigation">
+	<ul class="pagination justify-content-center">
+{% set prev = articles_page.has_previous() %}
+		<li class="page-item {{ 'disabled' if not prev else '' }}">
+			<a class="page-link" href="{{ SITEURL }}/{{ articles_paginator.page(1).url if prev else '#' }}" tabindex"{{ -1 if prev else 0 }}">
+				<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+			</a>
+		</li>
+		<li class="page-item {{ 'disabled' if not prev else '' }}">
+			<a class="page-link" href="{{ SITEURL }}/{{ articles_previous_page.url if prev else '#' }}" tabindex="{{ -1 if next else 0 }}">
+				<i class="fa fa-angle-left" aria-hidden="true"></i>
+			</a>
+		</li>
+{% for num in range( 1, 1 + articles_paginator.num_pages ) %}
+		<li class="page-item {{ 'active' if num == articles_page.number else '' }}">
+{% if num == articles_page.number %}
+			<span class="page-link">
+				{{ num }}
+				<span class="sr-only">(current)</span>
+			</span>
+{% else %}
+			<a class="page-link" href="{{ SITEURL }}/{{ articles_paginator.page(num).url }}">{{ num }}</a>
+{% endif %}
+		</li>
+{% endfor %}
+{% set next = articles_page.has_next() %}
+		<li class="page-item {{ 'disabled' if not next else '' }}">
+			<a class="page-link" href="{{ SITEURL }}/{{ articles_next_page.url if next else '#' }}" tabindex="{{ -1 if next else 0 }}">
+				<i class="fa fa-angle-right" aria-hidden="true"></i>
+			</a>
+		</li>
+		<li class="page-item {{ 'disabled' if not next else '' }}">
+			<a class="page-link" href="{{ SITEURL }}/{{ articles_paginator.page(articles_paginator.num_pages).url if next else '#' }}" tabindex="{{ -1 if next else 0 }}">
+				<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+			</a>
+		</li>
+	</ul>
+</nav>
 {% endif %}
