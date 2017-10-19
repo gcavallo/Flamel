@@ -9,7 +9,7 @@
 {% block content %}
 {% include "include/nav.html" %}
 <div class="row">
-	<div class="col-md-12 col-lg-10">
+	<div class="col-lg-12 col-xl-10">
 		<div class="row">
 			{% block page_title %}
 			<h2 class="page-title">Articles</h2>
@@ -18,7 +18,7 @@
 		{% for articles_pair in articles_page.object_list|batch(2) %}
 		<div class="row">
 			{% for article in articles_pair %}
-			<div class="col-sm-12 col-md-6">
+			<div class="col-md-12 col-lg-6">
 				{% include "include/preview.html" %}
 				<article class="post post-mini">
 					<header>
