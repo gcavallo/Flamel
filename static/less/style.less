@@ -1,25 +1,30 @@
 @import (less) "../css/pygments.css";
 
-@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin);
+//@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin);
+@import 'https://fonts.googleapis.com/css?family=Galada|Roboto:400,700&subset=cyrillic,latin-ext';
 
-@serif: "PT Serif", "Droid Serif", Times, "Times New Roman", serif;
-@sans-serif: "Droid Sans", Helvetica, "Segoe UI", sans-serif;
-@monospace: "DejaVu Sans Mono", Consolas, Courier, monospace;
+@heading-font: "Galada", "Droid Serif", Times, "Times New Roman", serif;
+@text-font: "Roboto", "Droid Sans", Helvetica, "Segoe UI", sans-serif;
+@code-font: "DejaVu Sans Mono", Consolas, Courier, monospace;
 
-@foreground: #000;
-@background: #2B303B;
+@foreground: #333;
+@background: #2b303b;
+@header: #efefef;
 @body: #fafafa;
-@block: #fff;
-@title: #2b303b;
-@subtitle: #b48ead;
 @border: #ddd;
-@anchor: #8fa1b3;
-@hover: #ebcb8b;
+
+@red: #bf616a;
+@green: #a3be8c;
+@yellow: #ebcb8b;
+@blue: #2b303b;
+@magenta: #b48ead;
+@cyan: #8fa1b3;
+@white: #fff;
+@black: #000;
 
 .heading-mixin(@size, @color) {
 	font-size: @size;
-	font-family: @serif;
-	font-weight: bold;
+	font-family: @heading-font;
 	font-style: normal;
 	margin-top: 0;
 	color: @color;
@@ -31,12 +36,12 @@
 	}
 }
 
-h1 { .heading-mixin(36px, @title); }
-h2 { .heading-mixin(30px, @title); }
-h3 { .heading-mixin(24px, @title); }
-h4 { .heading-mixin(18px, @subtitle); }
-h5 { .heading-mixin(16px, @subtitle); }
-h6 { .heading-mixin(12px, @foreground); }
+h1 { .heading-mixin(42px, @blue); }
+h2 { .heading-mixin(34px, @red); }
+h3 { .heading-mixin(26px, @green); }
+h4 { .heading-mixin(20px, @magenta); }
+h5 { .heading-mixin(18px, @black); }
+h6 { .heading-mixin(14px, @foreground); }
 
 html {
 	background-color: @background;
@@ -46,27 +51,27 @@ html {
 body {
 	color: @foreground;
 	background-color: @body;
-	font-family: @sans-serif;
+	font-family: @text-font;
 }
 
 code,
 kbd,
 pre,
 samp {
-	font-family: @monospace;
+	font-family: @code-font;
 }
 
 a {
-	color: @anchor;
+	color: @cyan;
 	&:hover {
-		color: @hover;
+		color: @yellow;
 		text-decoration: none;
 	}
 }
 
 .container { 
 	.navbar {
-		background-color: @block;
+		background-color: @white;
 		border: 1px solid @border;
 		border-radius: 4px;
 	}
@@ -76,7 +81,7 @@ a {
 }
 
 .header {
-	background-color: #efefef;
+	background-color: @header;
 	padding: 25px 0 0 0;
 	border-top: 5px solid @background;
 	border-bottom: 1px solid @border;
@@ -86,8 +91,7 @@ a {
 		width: 100px;
 	}
 	&-name {
-		font-style: italic;
-		margin: 0 25px 25px 0;
+		margin: 0 25px 18px 0;
 		float: left;
 	}
 	&-menu {
@@ -149,11 +153,6 @@ a {
 }
 
 .post {
-	background-color: @block;
-	border: 1px solid @border;
-	border-top: none;
-	border-radius: 0 0 4px 4px;
-	padding: 15px;
 	margin: 0 0 30px 0;
 	&-title {
 		margin-top: 0;
@@ -166,15 +165,24 @@ a {
 	}
 	&-content {
 		margin: 15px 0 15px 0;
-		font-family: @serif;
+		font-family: @text-font;
 	}
 	&-mini {
+		padding: 25px;
 		font-size: 16px;
 		line-height: 1.375;
+		background-color: @white;
+		border: 1px solid @border;
+		border-top: none;
+		border-radius: 0 0 4px 4px;
 	}
 	&-full {
 		font-size: 18px;
 		line-height: 1.444;
+		h1 { .heading-mixin(34px, @red); }
+		h2 { .heading-mixin(26px, @green); }
+		h3 { .heading-mixin(20px, @magenta); }
+		h4 { .heading-mixin(18px, @black); }
 	}
 	img {
 		display: block;
