@@ -1,0 +1,28 @@
+{
+	"name": "pelican-flamel",
+	"version": "0.1.0",
+	"description": "Responsive Pelican blog theme.",
+	"devDependencies": {
+		"bulma": "^0.6.0",
+		"font-awesome": "^4.7.0",
+		"grunt": "^1.0.1",
+		"grunt-contrib-clean": "^1.1.0",
+		"grunt-contrib-compress": "^1.4.3",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-cssmin": "^2.2.1",
+		"grunt-contrib-imagemin": "^2.0.1",
+		"grunt-contrib-less": "^1.4.1",
+		"grunt-sass": "^2.0.0",
+		"load-grunt-tasks": "^3.5.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gcavallo/pelican-flamel.git"
+	},
+	"author": "Gabriel Cavallo",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/gcavallo/pelican-flamel/issues"
+	},
+	"homepage": "https://github.com/gcavallo/pelican-flamel#readme"
+}

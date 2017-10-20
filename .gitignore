@@ -1,3 +1,7 @@
 *~
 .*.swp
 .directory
+
+dist/
+node_modules/
+static/

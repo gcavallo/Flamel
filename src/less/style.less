@@ -1,4 +1,4 @@
-@import (less) "../css/pygments.css";
+//@import (less) "../css/pygments.css";
 
 //@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin);
 @import 'https://fonts.googleapis.com/css?family=Galada|Roboto:400,700&subset=cyrillic,latin-ext';
@@ -20,6 +20,7 @@
 @magenta: #b48ead;
 @cyan: #8fa1b3;
 @white: #fff;
+@gray: #bbb;
 @black: #000;
 
 .heading-mixin(@size, @color) {
@@ -52,6 +53,7 @@ body {
 	color: @foreground;
 	background-color: @body;
 	font-family: @text-font;
+	font-size: 14px;
 }
 
 code,
@@ -70,10 +72,13 @@ a {
 }
 
 .container { 
-	.navbar {
+	.navbar-light {
 		background-color: @white;
 		border: 1px solid @border;
 		border-radius: 4px;
+		.navbar-nav .nav-link {
+			color: @cyan;
+		}
 	}
 	&-post {
 		max-width: 970px;
@@ -124,7 +129,7 @@ a {
 		display: inline-block;
 	}
 	.badge {
-		color: #bbb;
+		color: @gray;
 		background-color: #fff;
 	}
 }
@@ -200,6 +205,16 @@ a {
 
 .pagination {
 	margin: 0;
+	a.page-link {
+		color: @cyan;
+	}
+	.page-item.active .page-link {
+		background-color: @cyan;
+		border-color: @cyan;
+	}
+	.page-item.disabled .page-link {
+		color: @border;
+	}
 }
 
 // disqus
