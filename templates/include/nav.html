@@ -1,53 +1,50 @@
-<aside class="navbar navbar-default hidden-lg">
-	<header class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
+<nav class="navbar navbar-light navbar-expand-md d-xl-none">
+	<header>
 		<a class="navbar-brand" href="{{ SITEURL }}/">Blog</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#blog-nav" aria-controls="blog-nav" aria-expanded="false" aria-label="Toggle blog navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 	</header>
-	<div class="navbar-collapse collapse">
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<a href="{{ SITEURL }}/archives.html">
+	<div class="navbar-collapse collapse justify-content-end" id="blog-nav">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ SITEURL }}/archives.html">
 					<span class="fa fa-archive"></span>
 					Archives
 				</a>
 			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+			<li class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
 					<span class="fa fa-folder"></span>
 					Categories
 					<span class="caret"></span>
 				</a>
-				<ul class="dropdown-menu">
-					{% for category, articles in categories %}
-					<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-					{% endfor %}
-				</ul>
+				<div class="dropdown-menu">
+{% for category, articles in categories %}
+					<a class="dropdown-item" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+{% endfor %}
+				</div>
 			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+			<li class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="blog-nav-tags" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="fa fa-tags"></span>
 					Tags
 					<span class="caret"></span>
 				</a>
-				<ul class="dropdown-menu">
-					{% for tag, articles in tags|sort %}
-					<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a></li>
-					{% endfor %}
-				</ul>
+				<div class="dropdown-menu" aria-labelledby="blog-nav-tags">
+{% for tag, articles in tags|sort %}
+					<a class="dropdown-item" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a>
+{% endfor %}
+				</div>
 			</li>
-			{% if FEED_ATOM or FEED_RSS %}
-			<li>
-				<a href="/{% if FEED_ATOM %}{{ FEED_ATOM }}{% else %}{{ FEED_RSS }}{% endif %}">
+{% if FEED_ATOM or FEED_RSS %}
+			<li class="nav-item">
+				<a class="nav-link" href="/{% if FEED_ATOM %}{{ FEED_ATOM }}{% else %}{{ FEED_RSS }}{% endif %}">
 					<span class="fa fa-rss"></span>
 					Feed
 				</a>
 			</li>
-			{% endif %}
+{% endif %}
 		</ul>
 	</div>
-</aside>
+</nav>

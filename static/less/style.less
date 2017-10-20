@@ -72,10 +72,13 @@ a {
 }
 
 .container { 
-	.navbar {
+	.navbar-light {
 		background-color: @white;
 		border: 1px solid @border;
 		border-radius: 4px;
+		.navbar-nav .nav-link {
+			color: @cyan;
+		}
 	}
 	&-post {
 		max-width: 970px;
