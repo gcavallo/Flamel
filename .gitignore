@@ -1,5 +1,5 @@
 *~
-.*.swp
+.*.sw?
 .directory
 
 dist/
