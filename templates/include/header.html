@@ -1,64 +1,69 @@
-<header class="header">
-	<div class="container">
-		<h1 class="header-name">
-			{{ SITENAME }}
-		</h1>
-		<nav>
-			<ul class="header-menu list-inline">
-				<li><a href="{{ SITEURL }}/">Blog</a></li>
-				{% for p in PAGES %}
-				<li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-				{% endfor %}
-				{% if FB_ADDRESS %}
-				<li>
-					<a href="{{ FB_ADDRESS }}">
-						<span class="fa fa-facebook fa-fw"></span>
-					</a>
-				</li>
-				{% endif %}
-				{% if GITHUB_ADDRESS %}
-				<li>
-					<a href="{{ GITHUB_ADDRESS }}">
-						<span class="fa fa-github fa-fw"></span>
-					</a>
-				</li>
-				{% endif %}
-				{% if GOOGLE_ADDRESS %}
-				<li>
-					<a href="{{ GOOGLE_ADDRESS }}">
-						<span class="fa fa-google-plus fa-fw"></span>
-					</a>
-				</li>
-				{% endif %}
-				{% if IN_ADDRESS %}
-				<li>
-					<a href="{{ IN_ADDRESS }}">
-						<span class="fa fa-linkedin fa-fw"></span>
-					</a>
-				</li>
-				{% endif %}
-				{% if SO_ADDRESS %}
-				<li>
-					<a href="{{ SO_ADDRESS }}">
-						<span class="fa fa-stack-overflow fa-fw"></span>
-					</a>
-				</li>
-				{% endif %}
-				{% if TWITTER_ADDRESS %}
-				<li>
-					<a href="{{ TWITTER_ADDRESS }}">
-						<span class="fa fa-twitter fa-fw"></span>
-					</a>
-				</li>
-				{% endif %}
-				{% if YOUTUBE_ADDRESS %}
-				<li>
-					<a href="{{ YOUTUBE_ADDRESS }}">
-						<span class="fa fa-youtube fa-fw"></span>
-					</a>
-				</li>
-				{% endif %}
-			</ul>
+<!-- header tablet -->
+<header id="header" class="section">
+	<div class="container is-clearfix">
+		<!-- title -->
+		<div class="is-pulled-left">
+			<h1 class="title is-size-1-tablet is-marginless">{{ SITENAME }}</h1>
+		</div>
+		<!-- buttons -->
+		<nav class="field is-grouped is-pulled-right">
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ SITEURL }}/">Blog</a>
+			</p>
+			{% for p in PAGES %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+			</p>
+			{% endfor %}
+			{% if FB_ADDRESS %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ FB_ADDRESS }}">
+					<span class="fa fa-facebook fa-fw"></span>
+				</a>
+			</p>
+			{% endif %}
+			{% if GITHUB_ADDRESS %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ GITHUB_ADDRESS }}">
+					<span class="fa fa-github fa-fw"></span>
+				</a>
+			</p>
+			{% endif %}
+			{% if GOOGLE_ADDRESS %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark"   href="{{ GOOGLE_ADDRESS }}">
+					<span class="fa fa-google-plus fa-fw"></span>
+				</a>
+			</p>
+			{% endif %}
+			{% if IN_ADDRESS %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ IN_ADDRESS }}">
+					<span class="fa fa-linkedin fa-fw"></span>
+				</a>
+			</p>
+			{% endif %}
+			{% if SO_ADDRESS %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ SO_ADDRESS }}">
+					<span class="fa fa-stack-overflow fa-fw"></span>
+				</a>
+			</p>
+			{% endif %}
+			{% if TWITTER_ADDRESS %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ TWITTER_ADDRESS }}">
+					<span class="fa fa-twitter fa-fw"></span>
+				</a>
+			</p>
+			{% endif %}
+			{% if YOUTUBE_ADDRESS %}
+			<p class="control">
+				<a class="button is-size-5-tablet is-dark" href="{{ YOUTUBE_ADDRESS }}">
+					<span class="fa fa-youtube fa-fw"></span>
+				</a>
+			</p>
+			{% endif %}
 		</nav>
 	</div><!-- container -->
 </header>
