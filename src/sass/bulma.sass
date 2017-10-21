@@ -1,11 +1,78 @@
-// 1. Import the initial variables
+// Import initial variables
 @import "bulma/sass/utilities/initial-variables"
+@import url('https://fonts.googleapis.com/css?family=Galada|Roboto:400,700&subset=cyrillic,latin-ext')
 
-// 2. Set your own initial variables
-$family-serif: "Roboto", "Noto Sans", "Helvetica Neue", "Segoe UI", serif
+// Set our own initial variables
+$family-sans-serif: "Roboto", "Noto Sans", "Helvetica Neue", "Segoe UI", sans-serif
+$family-monospace:  "DejaVu Sans Mono", "Noto Sans Mono", "Consolas", Courier, monospace
 
-// 3. Set the derived variables
-$family-primary: $family-serif
+$size-1: 42px
+$size-2: 34px
+$size-3: 26px
+$size-4: 20px
+$size-5: 18px
+$size-6: 14px
+$size-7: 12px
 
-// 4. Import the rest of Bulma
+$red:     #bf616a
+$green:   #a3be8c
+$yellow:  #ebcb8b
+$blue:    #8fa1b3
+$magenta: #b48ead
+$cyan:    #96b5b4
+
+$white:        #fff    // white
+$white-bis:    #fafafa // body
+$white-ter:    #efefef // header
+$grey-lighter: #ddd    // border
+$grey-light:   #c0c5ce
+$grey:         #bbb    // muted
+$grey-dark:    #65737e // subtitle
+$grey-darker:  #2b303b // background
+$black-ter:    #333    // foreground
+$black-bis:    #111
+$black:        #000    // black
+
+// Set the bulma derived variables
+$family-primary:   $family-sans-serif
+
+$section-padding: 2rem 1.5rem
+
+$light:   $grey-lighter
+$dark:    $grey-darker
+$primary: $magenta
+$link:    $blue
+$info:    $cyan
+$success: $green
+$warning: $yellow
+$danger:  $red
+
+$body-background-color: $grey-darker
+
+$title-color:            $grey-darker
+$title-weight:           $weight-normal
+$title-strong-color:     $grey-darker
+$title-strong-weight:    $weight-semibold
+$subtitle-color:         $grey-dark
+$subtitle-weight:        $weight-normal
+$subtitle-strong-color:  $grey-dark
+$subtitle-strong-weight: $weight-semibold
+
+// Custom style
+body
+	background-color: $white-bis
+
+h1, h2, h3, h4, h5, h6
+	font-family: "Galada", "Noto Serif", Times, "Times New Roman", serif
+
+#header
+	background-color: $white-ter
+	border-top: 5px solid $dark
+	border-bottom: 1px solid $light
+	margin-bottom: 15px
+
+.button
+	border-radius: 0 !important
+
+// Import the rest of Bulma
 @import "bulma/bulma"
